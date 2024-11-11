@@ -23,7 +23,7 @@ let ctbl = {
         let cellIndex = event.target.cellIndex;
         let table = event.target.closest('table');
 
-        let sort = table.querySelector('thead').querySelectorAll('th')[cellIndex].getAttribute('data-sort');
+        let sort = table.querySelector('thead').querySelectorAll('th')[cellIndex].getAttribute('data-sort') ?? '';
 
         //Welche Sortierung lag vor, dann umkehren
         if (sort == 'az' || sort == '') {
@@ -75,11 +75,11 @@ let ctbl = {
             let aCol = a.querySelectorAll("td")[col].textContent.trim();
             let bCol = b.querySelectorAll("td")[col].textContent.trim();
 
-            if (a.querySelectorAll("td")[col].getAttribute("data-sort")) {
-                aCol = a.querySelectorAll("td")[col].getAttribute("data-sort");
+            if (a.querySelectorAll("td")[col].getAttribute("data-value")) {
+                aCol = a.querySelectorAll("td")[col].getAttribute("data-value");
             }
-            if (a.querySelectorAll("td")[col].getAttribute("data-sort")) {
-                bCol = b.querySelectorAll("td")[col].getAttribute("data-sort");
+            if (a.querySelectorAll("td")[col].getAttribute("data-value")) {
+                bCol = b.querySelectorAll("td")[col].getAttribute("data-value");
             }
             // Konvertiere die Werte in Zahlen für die Sortierung
 
